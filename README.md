@@ -1,7 +1,9 @@
 # tnt-dom
-## Super simple DOM utilities
+## Super simple DOM library
 
 Designed to be used with [browserify](http://www.browserify.org).
+
+Please note that this DOM library is not yet production ready. So for the moment: use at your own risk.
 
 ### Getting started
 
@@ -13,7 +15,7 @@ $ npm install tnt-dom
 
 Add it to your Javascript:
 ```javascript
-	var tnt = require('tnt-dom');
+var tnt = require('tnt-dom');
 ```
 
 ### Methods
@@ -21,16 +23,16 @@ Add it to your Javascript:
 #### constructor
 
 ```javascript
-	var fromhtml = new tnt( '<div class="my-class">My element</div>' );
-	var fromselector = new tnt( 'div.my-class' );
+var fromhtml = new tnt( '<div class="my-class">My element</div>' );
+var fromselector = new tnt( 'div.my-class' );
 ```
 
 #### forEach
 
 ```javascript
-	element.forEach( function( el ) {
-		console.log( el );
-	} );
+element.forEach( function( el ) {
+	console.log( el );
+} );
 ```
 
 #### remove
@@ -38,7 +40,7 @@ Add it to your Javascript:
 Removes the element from the DOM.
 
 ```javascript
-	element.remove();
+element.remove();
 ```
 
 #### addClass
@@ -46,7 +48,7 @@ Removes the element from the DOM.
 Adds a class to the element(s)
 
 ```javascript
-	element.addClass( 'my-class' );
+element.addClass( 'my-class' );
 ```
 
 #### removeClass
@@ -54,5 +56,5 @@ Adds a class to the element(s)
 Removes a class from the element(s)
 
 ```javascript
-	element.removeClas( 'my-class' );
+element.removeClas( 'my-class' );
 ```
