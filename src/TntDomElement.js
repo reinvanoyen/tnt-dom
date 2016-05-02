@@ -11,8 +11,7 @@ class TntDomElement {
 		if( elements instanceof HTMLElement )
 		{
 			this.elements.push( elements );
-		}
-		else if( elements instanceof HTMLCollection || elements instanceof NodeList ) {
+		} else if( elements instanceof HTMLCollection || elements instanceof NodeList ) {
 
 			for( var i = 0; i < elements.length; i++ )
 			{
