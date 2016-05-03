@@ -25,4 +25,18 @@ test.addClass( 'nice' );
 
 var btn = new tnt( 'div>button' );
 
+console.log( btn.elements.length );
+
 btn.addClass( 'my-button-class' ).html( 'nice' );
+
+var copy = btn.copy().appendTo( body );
+
+var something = new tnt( '<div>Some text</div>' );
+
+something
+	.appendTo( body )
+	.copy()
+	.appendTo( body )
+	.copy()
+	.appendTo( body )
+;

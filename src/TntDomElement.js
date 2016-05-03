@@ -106,6 +106,18 @@ class TntDomElement {
 		return this;
 	}
 
+	copy() {
+
+		let html = '';
+
+		this.forEach( function( e ) {
+
+			html += e.outerHTML;
+		} );
+
+		return new TntDomElement( html );
+	}
+
 	click( cb ) {
 
 		return this.bind( 'click', cb );

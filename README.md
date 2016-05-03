@@ -43,6 +43,14 @@ Removes the element from the DOM.
 element.remove();
 ```
 
+#### copy
+
+Makes a new copy of the element(s)
+
+```javascript
+element.copy();
+```
+
 #### addClass
 
 Adds a class to the element(s)

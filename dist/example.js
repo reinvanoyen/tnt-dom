@@ -114,6 +114,19 @@ var TntDomElement = function () {
 			return this;
 		}
 	}, {
+		key: 'copy',
+		value: function copy() {
+
+			var html = '';
+
+			this.forEach(function (e) {
+
+				html += e.outerHTML;
+			});
+
+			return new TntDomElement(html);
+		}
+	}, {
 		key: 'click',
 		value: function click(cb) {
 
@@ -165,7 +178,15 @@ test.addClass('nice');
 
 var btn = new tnt('div>button');
 
+console.log(btn.elements.length);
+
 btn.addClass('my-button-class').html('nice');
+
+var copy = btn.copy().appendTo(body);
+
+var something = new tnt('<div>Some text</div>');
+
+something.appendTo(body).copy().appendTo(body).copy().appendTo(body);
 
 },{"./TntDomElement.js":1}],3:[function(require,module,exports){
 "use strict";
