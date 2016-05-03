@@ -14,6 +14,6 @@ var btns = new tnt( 'body>button' );
 
 btns.click( function( e ) {
 
-	console.log( 'clicked a button!' );
+	new tnt( 'body' ).append( '<span>Something</span>' );
 	e.preventDefault();
 } );

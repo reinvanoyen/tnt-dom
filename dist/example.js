@@ -8,28 +8,35 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var util = require('./util');
 
 var TntDomElement = function () {
-	function TntDomElement(elements) {
+	function TntDomElement(arg) {
 		_classCallCheck(this, TntDomElement);
 
-		this.elements = [];
+		if (arg instanceof TntDomElement) {
+			return arg;
+		}
 
-		if (elements instanceof HTMLElement) {
-			this.elements.push(elements);
-		} else if (elements instanceof HTMLCollection || elements instanceof NodeList) {
+		if (typeof arg === 'string') {
 
-			for (var i = 0; i < elements.length; i++) {
-				this.elements.push(elements[i]);
-			}
-		} else if (typeof elements === 'string') {
-
-			if (util.isHtmlString(elements)) {
+			if (util.isHtmlString(arg)) {
 
 				var wrap = document.createElement('div');
-				wrap.innerHTML = elements;
+				wrap.innerHTML = arg;
 				return new TntDomElement(wrap.childNodes);
 			} else {
 
-				return new TntDomElement(document.querySelectorAll(elements));
+				return new TntDomElement(document.querySelectorAll(arg));
+			}
+		}
+
+		this.elements = [];
+
+		if (arg instanceof HTMLElement) {
+
+			this.elements.push(arg);
+		} else if (arg instanceof HTMLCollection || arg instanceof NodeList) {
+
+			for (var i = 0; i < arg.length; i++) {
+				this.elements.push(arg[i]);
 			}
 		} else {
 
@@ -107,6 +114,8 @@ var TntDomElement = function () {
 		key: 'append',
 		value: function append(element) {
 
+			element = new TntDomElement(element);
+
 			var first = this.get(0);
 
 			element.forEach(function (e) {
@@ -178,7 +187,7 @@ var btns = new tnt('body>button');
 
 btns.click(function (e) {
 
-	console.log('clicked a button!');
+	new tnt('body').append('<span>Something</span>');
 	e.preventDefault();
 });
 

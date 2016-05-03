@@ -4,31 +4,38 @@ var util = require( './util' );
 
 class TntDomElement {
 
-	constructor( elements ) {
+	constructor( arg ) {
 
-		this.elements = [];
-
-		if( elements instanceof HTMLElement )
+		if( arg instanceof TntDomElement )
 		{
-			this.elements.push( elements );
-		} else if( elements instanceof HTMLCollection || elements instanceof NodeList ) {
+			return arg;
+		}
 
-			for( var i = 0; i < elements.length; i++ )
-			{
-				this.elements.push( elements[ i ] );
-			}
+		if( typeof arg === 'string' ) {
 
-		} else if( typeof elements === 'string' ) {
-
-			if( util.isHtmlString( elements ) ) {
+			if( util.isHtmlString( arg ) ) {
 
 				let wrap = document.createElement( 'div' );
-				wrap.innerHTML = elements;
+				wrap.innerHTML = arg;
 				return new TntDomElement( wrap.childNodes );
 
 			} else {
 
-				return new TntDomElement( document.querySelectorAll( elements ) );
+				return new TntDomElement( document.querySelectorAll( arg ) );
+			}
+		}
+
+		this.elements = [];
+
+		if( arg instanceof HTMLElement ) {
+
+			this.elements.push( arg );
+
+		} else if( arg instanceof HTMLCollection || arg instanceof NodeList ) {
+
+			for( var i = 0; i < arg.length; i++ )
+			{
+				this.elements.push( arg[ i ] );
 			}
 
 		} else {
@@ -98,6 +105,8 @@ class TntDomElement {
 	}
 
 	append( element ) {
+
+		element = new TntDomElement( element );
 
 		let first = this.get( 0 );
 

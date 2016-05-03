@@ -65,7 +65,11 @@ element.copy();
 Append on or multiple elements to the current element
 
 ```javascript
-element.append( new tnt( '<button>Add this button</button>' ) );
+element.append( new tnt( 'body' ) );
+```
+or
+```javascript
+element.append( '<button>my button</button>' ) );
 ```
 
 #### appendTo
