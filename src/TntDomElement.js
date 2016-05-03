@@ -33,7 +33,7 @@ class TntDomElement {
 
 		} else {
 
-			throw 'Invalid argument for constructor';
+			throw "Invalid argument for constructor";
 		}
 
 		return this;
@@ -87,23 +87,34 @@ class TntDomElement {
 		return this;
 	}
 
+	get( i ) {
+
+		if( typeof this.elements[ i ] !== 'undefined' ) {
+
+			return this.elements[ i ];
+		}
+
+		throw "Could not get element with index " + i;
+	}
+
 	append( element ) {
 
-		this.forEach( c => {
+		let first = this.get( 0 );
 
-			element.forEach( e => {
+		element.forEach( e => {
 
-				c.appendChild( e );
-			} );
+			first.appendChild( e );
 		} );
-
-		return this;
 	}
 
 	appendTo( element ) {
 
-		element.append( this );
-		return this;
+		let first = element.get( 0 );
+
+		this.forEach( e => {
+
+			first.appendChild( e );
+		} );
 	}
 
 	copy() {
