@@ -31,12 +31,15 @@ btn.addClass( 'my-button-class' ).html( 'nice' );
 
 var copy = btn.copy().appendTo( body );
 
-var something = new tnt( '<div>Some text</div>' );
+var something = new tnt( '<div class="something">Some text</div>' );
 
 something
 	.appendTo( body )
 	.copy()
 	.appendTo( body )
 	.copy()
+	.html( 'lastone' )
 	.appendTo( body )
 ;
+
+var allsomethings = new tnt( '.something' ).copy().appendTo( body );

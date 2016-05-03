@@ -41,7 +41,7 @@ class TntDomElement {
 
 	forEach( cb ) {
 
-		this.elements.forEach( function( e ) {
+		this.elements.forEach( e => {
 
 			cb( e );
 		} );
@@ -49,7 +49,7 @@ class TntDomElement {
 
 	html( htmlString ) {
 
-		this.forEach( function( e ) {
+		this.forEach( e => {
 
 			e.innerHTML = htmlString;
 		} );
@@ -59,7 +59,7 @@ class TntDomElement {
 
 	addClass( classname ) {
 
-		this.forEach( function( e ) {
+		this.forEach( e => {
 
 			e.classList.add( classname );
 		} );
@@ -69,7 +69,7 @@ class TntDomElement {
 
 	removeClass( classname ) {
 
-		this.forEach( function( e ) {
+		this.forEach( e => {
 
 			e.classList.remove( classname );
 		} );
@@ -79,7 +79,7 @@ class TntDomElement {
 
 	remove() {
 
-		this.forEach( function( e ) {
+		this.forEach( e => {
 
 			e && e.parentNode && e.parentNode.removeChild( e );
 		} );
@@ -89,9 +89,9 @@ class TntDomElement {
 
 	append( element ) {
 
-		this.forEach( function( c ) {
+		this.forEach( c => {
 
-			element.forEach( function( e ) {
+			element.forEach( e => {
 
 				c.appendChild( e );
 			} );
@@ -110,7 +110,7 @@ class TntDomElement {
 
 		let html = '';
 
-		this.forEach( function( e ) {
+		this.forEach( e => {
 
 			html += e.outerHTML;
 		} );
@@ -125,7 +125,7 @@ class TntDomElement {
 
 	bind( eventName, cb ) {
 
-		this.forEach( function( e ) {
+		this.forEach( e => {
 
 			e.addEventListener( eventName, cb );
 		} );
