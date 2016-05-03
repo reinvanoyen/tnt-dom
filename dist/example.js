@@ -148,6 +148,25 @@ var TntDomElement = function () {
 			return new TntDomElement(html);
 		}
 	}, {
+		key: 'insertBefore',
+		value: function insertBefore(element) {
+
+			var first = element.get(0);
+
+			this.forEach(function (e) {
+
+				first.parentNode.insertBefore(e, first);
+			});
+		}
+	}, {
+		key: 'wrap',
+		value: function wrap(element) {
+
+			element = new TntDomElement(element);
+			element.insertBefore(this);
+			this.appendTo(element);
+		}
+	}, {
 		key: 'click',
 		value: function click(cb) {
 
@@ -190,6 +209,17 @@ btns.click(function (e) {
 	new tnt('body').append('<span>Something</span>');
 	e.preventDefault();
 });
+
+var btn = new tnt('<button>mybutton 1</button>');
+var btn2 = new tnt('<button>mybutton 2</button>');
+
+btn.insertBefore(btns);
+btn2.insertBefore(btn);
+
+var wrap = new tnt('<div class="wrapper"></div>');
+btn2.wrap(wrap);
+wrap.wrap('<div class="another-wrapper"></div>');
+btns.wrap('<div class="my-button-collection"></div>');
 
 },{"./TntDomElement.js":1}],3:[function(require,module,exports){
 "use strict";

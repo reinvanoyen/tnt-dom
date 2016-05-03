@@ -23,9 +23,14 @@ var tnt = require('tnt-dom');
 #### constructor
 
 ```javascript
-var fromhtml = new tnt( '<div class="my-class">My element</div>' );
-var fromselector = new tnt( 'div.my-class' );
-var fromhtmlelement = new tnt( document.body );
+// From HTML string
+var el = new tnt( '<div class="my-class">My element</div>' );
+
+// From selector
+var el = new tnt( 'div.my-class' );
+
+// From HTMLElement
+var el = new tnt( document.body );
 ```
 
 #### forEach
@@ -62,7 +67,7 @@ element.copy();
 
 #### append
 
-Append on or multiple elements to the current element
+Append one or multiple elements to the current element
 
 ```javascript
 element.append( new tnt( 'body' ) );
@@ -78,6 +83,22 @@ Append the current element to an element
 
 ```javascript
 element.appendTo( new tnt( document.body ) );
+```
+
+#### insertBefore
+
+Inserts the element(s) before an element
+
+```javascript
+element.appendTo( new tnt( document.body ) );
+```
+
+#### wrap
+
+Wrap the element(s) with an element
+
+```javascript
+element.wrap( new tnt( '<div></div>' ) );
 ```
 
 #### addClass

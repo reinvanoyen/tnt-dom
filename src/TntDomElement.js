@@ -138,6 +138,23 @@ class TntDomElement {
 		return new TntDomElement( html );
 	}
 
+	insertBefore( element ) {
+
+		let first = element.get( 0 );
+
+		this.forEach( e => {
+
+			first.parentNode.insertBefore( e, first );
+		} );
+	}
+
+	wrap( element ) {
+
+		element = new TntDomElement( element );
+		element.insertBefore( this );
+		this.appendTo( element );
+	}
+
 	click( cb ) {
 
 		return this.bind( 'click', cb );
