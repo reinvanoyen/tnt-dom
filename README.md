@@ -1,6 +1,8 @@
 # tnt-dom
 ## Super simple DOM library
 
+[![Join the chat at https://gitter.im/reinvanoyen/tnt-dom](https://badges.gitter.im/reinvanoyen/tnt-dom.svg)](https://gitter.im/reinvanoyen/tnt-dom?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Designed to be used with [browserify](http://www.browserify.org).
 
 Please note that this DOM library is not yet production ready. So for the moment: use at your own risk.
