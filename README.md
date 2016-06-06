@@ -111,6 +111,14 @@ Adds a class to the element(s)
 element.addClass( 'my-class' );
 ```
 
+#### addClass
+
+Sets a CSS property to the element(s)
+
+```javascript
+element.css( 'color', 'red' );
+```
+
 #### removeClass
 
 Removes a class from the element(s)
