@@ -56,6 +56,12 @@ var TntDomElement = function () {
 			});
 		}
 	}, {
+		key: 'length',
+		value: function length() {
+
+			return this.elements.length;
+		}
+	}, {
 		key: 'html',
 		value: function html(htmlString) {
 
@@ -219,7 +225,7 @@ btns.click(function (e) {
 
 	btns.css('color', 'red');
 
-	new tnt('body').append('<span>Something</span>');
+	new tnt('body').append('<span>' + btns.length() + '</span>');
 	e.preventDefault();
 });
 

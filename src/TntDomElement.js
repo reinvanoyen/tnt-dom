@@ -54,6 +54,11 @@ class TntDomElement {
 		} );
 	}
 
+	length() {
+
+		return this.elements.length;
+	}
+
 	html( htmlString ) {
 
 		this.forEach( e => {

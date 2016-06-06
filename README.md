@@ -43,6 +43,14 @@ element.forEach( function( el ) {
 } );
 ```
 
+#### length
+
+Gets the amount of matched elements
+
+```javascript
+element.length();
+```
+
 #### get
 
 Gets a HTMLElement by index
@@ -103,20 +111,20 @@ Wrap the element(s) with an element
 element.wrap( new tnt( '<div></div>' ) );
 ```
 
+#### css
+
+Sets a CSS property to the element(s)
+
+```javascript
+element.css( 'color', 'red' );
+```
+
 #### addClass
 
 Adds a class to the element(s)
 
 ```javascript
 element.addClass( 'my-class' );
-```
-
-#### addClass
-
-Sets a CSS property to the element(s)
-
-```javascript
-element.css( 'color', 'red' );
 ```
 
 #### removeClass

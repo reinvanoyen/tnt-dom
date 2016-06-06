@@ -15,8 +15,8 @@ var btns = new tnt( 'body>button' );
 btns.click( function( e ) {
 
 	btns.css( 'color', 'red' );
-
-	new tnt( 'body' ).append( '<span>Something</span>' );
+		
+	new tnt( 'body' ).append( '<span>' + btns.length() + '</span>' );
 	e.preventDefault();
 } );
 
