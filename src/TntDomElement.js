@@ -84,6 +84,17 @@ class TntDomElement {
 		return this;
 	}
 
+	css( property, value ) {
+
+
+		this.forEach( e => {
+
+			e.style[ property ]= value;
+		} );
+
+		return this;
+	}
+
 	remove() {
 
 		this.forEach( e => {
