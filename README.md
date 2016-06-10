@@ -119,6 +119,22 @@ Sets a CSS property to the element(s)
 element.css( 'color', 'red' );
 ```
 
+#### setAttr
+
+Sets the attribute to the element(s)
+
+```javascript
+element.setAttr( 'type', 'submit' );
+```
+
+#### removeAttr
+
+Removes the attribute from the element(s)
+
+```javascript
+element.removeAttr( 'type' );
+```
+
 #### addClass
 
 Adds a class to the element(s)
